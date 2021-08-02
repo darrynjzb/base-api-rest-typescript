@@ -1,0 +1,14 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "curly": true,
+    "no-console": false,
+    "no-unused-expression": false
+  },
+  "jsRules": {
+    "curly": true
+  },
+  "rulesDirectory": [
+
+  ]
+}
