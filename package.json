@@ -5,8 +5,8 @@
   "main": "app.ts",
   "scripts": {
     "ts-w": "tsc -w",
-    "start-local": "nodemon ./build/app.js",
-    "tslint-w": "tslint ./app/**/*.ts ./app/**/**/*.ts ./config/*.ts ./config/**/*.ts"
+    "start-local-w": "nodemon ./build/app.js",
+    "tslint-check": "tslint ./app/**/*.ts ./app/**/**/*.ts ./config/*.ts ./config/**/*.ts"
   },
   "author": "Darryn Briceño",
   "license": "ISC",

@@ -3,7 +3,8 @@
   "rules": {
     "curly": true,
     "no-console": false,
-    "no-unused-expression": false
+    "no-unused-expression": false,
+    "max-classes-per-file": false
   },
   "jsRules": {
     "curly": true

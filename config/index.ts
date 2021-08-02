@@ -3,7 +3,7 @@ import { IConfig } from './../app/interfaces/config.interface';
 
 let config: IConfig;
 
-const getConfiguration = () => {
+const getConfiguration = (): IConfig => {
   const env = process.env.TS_ENV || 'local';
   if (fs.existsSync(`${__dirname}/config.${env}`)) {
     throw new Error(`the config file ${__dirname}/config.${env}.js was not found, set correctly the env variable TS_ENV`);
