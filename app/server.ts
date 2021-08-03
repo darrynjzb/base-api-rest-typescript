@@ -10,7 +10,7 @@ import { errorHandlerMiddleware } from './middlewares/common/error-handler-middl
 const BASE_URL = `/api/${config.api.version}`;
 const PORT = config.api.port;
 
-export class Server {
+export default class Server {
   public app = express.application;
 
   constructor() {

@@ -1,4 +1,4 @@
-export interface IConfig {
+export default interface IConfig {
   env: string;
   middewares: {
     users: {

@@ -1,7 +1,7 @@
 import moment from 'moment';
 import _ from 'lodash';
 
-import { ILogger } from '../interfaces/logger-interface';
+import ILogger from '../interfaces/logger-interface';
 import { BadRequestError } from '../utils/common-errors';
 
 const levelMap: any = {

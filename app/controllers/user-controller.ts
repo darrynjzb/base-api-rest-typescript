@@ -1,11 +1,9 @@
 import { Request } from 'express';
 import { findById } from '../services/user-service';
-
 class UserController {
   public async findById(req: Request) {
     try {
-      const user = await findById(req.params.id);
-      return user;
+      return await findById(req.params.id);
     } catch (e: any) {
       throw e;
     }
@@ -13,4 +11,3 @@ class UserController {
 };
 
 export default new UserController();
-

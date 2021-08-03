@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import { config } from '../../../config/index';
 
-export class MongoConnection {
+export default class MongoConnection {
   public instance!: mongoose.Mongoose;
 
   constructor() {

@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 
-import { IUser } from '../../../interfaces/user-interface';
+import IUser from '../../../interfaces/user-interface';
 import { USER_STATUS } from '../../../utils/constants';
 
 const UserSchema = new Schema(
@@ -20,4 +20,5 @@ const UserSchema = new Schema(
 
 UserSchema.index({ email: 1, username: 1, document: 1 }, { unique: true });
 
-export default model<IUser>('User', UserSchema);
+const UserModel = model<IUser>('User', UserSchema);
+export { UserModel };
