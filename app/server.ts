@@ -15,16 +15,10 @@ export class Server {
 
   constructor() {
     this.app = express();
-    this.init();
-  };
-
-  init(): void {
-    this.middlewares();
-    this.routes();
     this.run();
   };
 
-  middlewares(): void {
+  initMiddlewares(): void {
     this.app.set('trust proxy', true);
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
@@ -32,7 +26,7 @@ export class Server {
     this.app.use(compression());
   };
 
-  routes(): void {
+  initRroutes(): void {
     this.app.get('/health/', (req: Request, res: Response) => {
       res.status(200).send({ code: 'OK', message: 'service up and running' });
     });
@@ -41,13 +35,20 @@ export class Server {
   };
 
   run(): void {
-    this.app.listen(PORT, () => {
-      console.log(`\x1b[32m Starting the microservice [ ${config.api.name} ]. at ${Date().toString()}`);
-      console.log(`\x1b[32m Listening on port ${PORT}`);
-      console.log(`\x1b[32m Running environment NODE_ENV=${config.env}`);
-      console.log(`\x1b[32m Configuration middlewares: ${JSON.stringify(config.middewares)}`);
+    try {
+      this.initMiddlewares();
+      this.initRroutes();
+      this.app.listen(PORT, () => {
+        console.log(`\x1b[32m Starting the microservice [ ${config.api.name} ]. at ${Date().toString()}`);
+        console.log(`\x1b[32m Listening on port ${PORT}`);
+        console.log(`\x1b[32m Running environment NODE_ENV=${config.env}`);
+        console.log(`\x1b[32m Configuration middlewares: ${JSON.stringify(config.middewares)}`);
 
-      displayRoutes(this.app);
-    });
+        displayRoutes(this.app);
+      });
+    } catch (e: any) {
+      console.error(`\x1b[31m xxx Error trying to run server: ${e.message}`);
+      process.exit(1);
+    }
   };
 };

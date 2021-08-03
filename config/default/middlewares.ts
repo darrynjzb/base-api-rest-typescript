@@ -13,7 +13,7 @@ export = {
     ],
     getById: strToArrMdws(process.env.NODE_CONFIG_MIDDLEWARE_GET_BY_ID_USER || '') || [
       'check-length-user-id-middleware',
-      'test-middleware'
+      'get-user-by-id-middleware'
     ],
     update: strToArrMdws(process.env.NODE_CONFIG_MIDDLEWARE_UPDATE_BY_ID_USER || '') || [
       'check-length-user-id-middleware',

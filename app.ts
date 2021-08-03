@@ -5,14 +5,14 @@ import { config } from './config/index'
 import { Server } from './app/server';
 import { MongoConnection } from './app/database/mongodb/connection';
 
-// innit express server
-new Server();
-
-// innit dependencies
+// run all
 (async () => {
+  // express server
+  new Server();
+  // dependencies
   config.database.drivers.split(',').forEach(async (driver) => {
     if (driver === 'mongodb') {
-      new MongoConnection();
+      await new MongoConnection();
     }
   });
 })();
