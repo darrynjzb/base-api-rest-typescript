@@ -14,4 +14,11 @@ export interface IConfig {
     version: string;
     blacklistMask: string;
   }
+  database: {
+    drivers: string;
+    mongodb: {
+      host: string;
+      databaseName: string;
+    }
+  }
 };
