@@ -4,9 +4,9 @@
   "description": "Base api rest with typescript",
   "main": "app.ts",
   "scripts": {
-    "ts-w": "tsc -w",
-    "start-local-w": "nodemon ./build/app.js",
-    "tslint-check": "tslint ./app/**/*.ts ./app/**/**/*.ts ./config/*.ts ./config/**/*.ts"
+    "tsc-w": "tsc -w",
+    "local-w": "nodemon ./build/app.js",
+    "tslint-w": "tslint ./app/**/*.ts ./app/**/**/*.ts ./config/*.ts ./config/**/*.ts"
   },
   "author": "Darryn Briceño",
   "license": "ISC",

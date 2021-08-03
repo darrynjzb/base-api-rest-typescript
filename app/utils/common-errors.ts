@@ -11,8 +11,6 @@ export class DomainError extends Error {
     Error.captureStackTrace(this, this.constructor);
   }
 }
-
-// tslint:disable-next-line: max-classes-per-file
 export class BadRequestError extends DomainError {
   constructor(code: string, msg: string) {
     super(code, msg);

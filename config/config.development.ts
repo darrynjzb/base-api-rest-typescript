@@ -3,6 +3,7 @@ export = {
   api: {
     port: Number(process.env.TS_CONFIG_SERVER_PORT),
     name: process.env.TS_CONFIG_API_NAME,
-    version: process.env.TS_CONFIG_API_VERSION
+    version: process.env.TS_CONFIG_API_VERSION,
+    blacklistMask: process.env.TS_CONFIG_API_BLACKLIST_MASK,
   }
 };

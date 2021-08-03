@@ -5,7 +5,7 @@ import compression from 'compression';
 import displayRoutes from 'express-routemap';
 
 import { config } from '../config/index';
-import { ApiRouter } from './routes/api.routes';
+import { ApiRouter } from './routes/api-routes';
 import { errorHandlerMiddleware } from './middlewares/common/error-handler-middleware'
 
 const BASE_URL = `/api/${config.api.version}`;
