@@ -13,3 +13,7 @@ export const create = async (body: IUser) => {
 export const update = async (query: object, dataToUpdate: IUser, options = { new: true }) => {
   return await UserModel.findOneAndUpdate(query, dataToUpdate, options).exec();
 };
+
+export const remove = async (query: object) => {
+  return await UserModel.findOneAndRemove(query).exec();
+};

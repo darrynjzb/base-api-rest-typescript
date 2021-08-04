@@ -1,5 +1,5 @@
 import { Request } from 'express';
-import { findById, create, update } from '../services/user-service';
+import { findById, create, update, remove } from '../services/user-service';
 class UserController {
   public async findById(req: Request) {
     try {
@@ -21,6 +21,15 @@ class UserController {
     try {
       const query = { _id: req.params.id };
       return await update(query, req.body);
+    } catch (e) {
+      throw e;
+    }
+  };
+
+  public async remove(req: Request) {
+    try {
+      const query = { _id: req.params.id };
+      return await remove(query);
     } catch (e) {
       throw e;
     }

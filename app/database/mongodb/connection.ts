@@ -18,6 +18,7 @@ export default class MongoConnection {
     const database = config.database.mongodb.databaseName;
     try {
       mongoose.set('useCreateIndex', true);
+      mongoose.set('useFindAndModify', false);
       this.instance = await mongoose.connect(`${host}/${database}`, { useNewUrlParser: true, useUnifiedTopology: true });
       console.log(`\x1b[32m === Mongodb connected ===`);
       return this.instance;
