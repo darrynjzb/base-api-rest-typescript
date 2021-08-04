@@ -12,7 +12,7 @@ npm install
 local, development, stage and production. These are set by the ENV called **TS_ENV**
 
 ```sh
-NODE_ENV=local
+TS_ENV=local
 ```
 
 The specfic configurations are in **config**.
@@ -39,6 +39,8 @@ The is a postman collection to test the endpoints locally. The collection is in 
 
 ## TODO
 
-- Map and handle errors into middleware layer (catch block)
-- Write to file logger
-- Recursive search into getMiddlewares method
+- add logs in worflow
+- write logs into file
+- swagger
+- dockerfile
+- unit test
