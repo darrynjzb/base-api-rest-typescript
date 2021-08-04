@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/users/:id', getMiddlewares(config.middewares.users.getById));
 router.post('/users/', getMiddlewares(config.middewares.users.create));
-// router.patch('/users/:id');
+router.patch('/users/:id', getMiddlewares(config.middewares.users.update));
 // router.delete('/users/:id');
 
 export { router as ApiRouter };
