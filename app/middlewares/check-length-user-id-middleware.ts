@@ -4,7 +4,7 @@ import { BadRequestError } from '../utils/common-errors';
 export const checkLengthUserIdMiddleware = (req: Request, res: Response, next: NextFunction) => {
   const id = req.params.id;
   if (id.length < 24) {
-    next(new BadRequestError('INVALID_LENGTH_ID', 'the id length is invalid'));
+    throw new BadRequestError('INVALID_LENGTH_ID', 'the id length is invalid');
   }
   return next();
 };

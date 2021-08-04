@@ -8,7 +8,7 @@ export const updateUserByIdMiddleware = async (req: Request, res: Response, next
   try {
     const user = await UserController.update(req);
     if (!user) {
-      return next(new NotFoundError('USER_NOT_FOUND', 'the user not exist'));
+      throw new NotFoundError('USER_NOT_FOUND', 'the user not exist');
     }
     const bRes = { code: 'OK', message: 'user updated succesfully', user }
     return setResponseRaw(res, 200, bRes);

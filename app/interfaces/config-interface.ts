@@ -21,4 +21,7 @@ export default interface IConfig {
       databaseName: string;
     }
   }
+  headers: {
+    allowChannels: string;
+  }
 };

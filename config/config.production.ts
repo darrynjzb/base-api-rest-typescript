@@ -12,5 +12,8 @@ export = {
       host: process.env.MONGODB_HOST,
       databaseName: process.env.MONGODB_DATABASE_NAME,
     }
+  },
+  headers: {
+    allowChannels: process.env.CHANNELS || 'web'
   }
 };

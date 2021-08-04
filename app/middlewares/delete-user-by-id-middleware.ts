@@ -8,7 +8,7 @@ export const deleteUserByIdMiddleware = async (req: Request, res: Response, next
   try {
     const user = await UserController.remove(req);
     if (!user) {
-      return next(new NotFoundError('USER_NOT_FOUND', 'the user not exist'));
+      throw new NotFoundError('USER_NOT_FOUND', 'the user not exist');
     }
     return setResponseWithOk(res, 200, 'user deleted succefully');
   } catch (e: any) {
