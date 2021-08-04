@@ -1,4 +1,4 @@
-export interface IConfig {
+export default interface IConfig {
   env: string;
   middewares: {
     users: {
@@ -13,5 +13,12 @@ export interface IConfig {
     name: string;
     version: string;
     blacklistMask: string;
+  }
+  database: {
+    drivers: string;
+    mongodb: {
+      host: string;
+      databaseName: string;
+    }
   }
 };

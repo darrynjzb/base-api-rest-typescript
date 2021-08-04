@@ -1,4 +1,4 @@
-export interface ILogger {
+export default interface ILogger {
   moduleName: string;
   methodName: string;
   description: string;
